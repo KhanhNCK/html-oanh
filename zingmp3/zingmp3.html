@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZingMP3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="zingmp3.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="row" id="header">
+            <div class="col-md-3">
+                <a class="logo" href=""> <img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    <div>
+                        <input type="text" class="form-control" id="search" placeholder="Nhập tên bài hát, ca sĩ hoặc mv…">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="">
+                            <img src="img/anhdaidien.png" class="rounded-circle" alt="Zing MP3">
+                        </a>
+                    </div> 
+                    <div class="col-md-8" id="drop">
+                        <div class="username">
+                            <a href="" id="username">USERNAME</a>
+                            <div>
+                                <a href="" id="inf4">Tài khoản thường</a> 
+                            </div> 
+                        </div>                      
+                        <div>
+                            <div class="dropdown">
+                                <i class="fas fa-chevron-down" data-toggle="dropdown"></i>
+                                <div  class="dropdown-menu" id="dropdown-menu">                                   
+                                    <a rel="" href="" class="dropdown-item">
+                                        <i class="far fa-user"></i>
+                                        <span>Nhạc Cá Nhân</span>
+                                    </a>                               
+                                    <a rel="" href="" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Đăng Xuất</span>
+                                    </a>                   
+                                    <a rel="" href="" class="dropdown-item">
+                                        <i class="fas fa-moon"></i>
+                                        <span>Nền Tối</span>
+                                        <i class="fas fa-toggle-on"></i>
+                                    </a>                          
+                                    <div class="center">
+                                        <a rel="" href="#" class="btn btn-warning">Mua VIP ngay</a>
+                                    </div>
+ 
+                                </div>
+                            </div>
+                        </div>       
+                    </div>          
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" id="trangchu">
+                    <a href="">TRANG CHỦ</a>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">#ZINGCHART</a>
+                        <div class="dropdown-content" style="width: 500px;">
+                              <div class="row">
+                                <div class="col-md-3 cl-md-3">
+                                    <span><b> REALTIME</b></span>
+                                    <a href="">Bài hát</a>
+                                    <a href="">MV</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                   <span><b>TUẦN</b></span>
+                                   <a href="">Bài hát</a>
+                                   <a href="">MV</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <span><b>US-UK</b></span>
+                                    <a href="">Bài hát</a>
+                                    <a href="">MV</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <span><b>K-POP</b></span>
+                                    <a href="">Bài hát</a>
+                                    <a href="">MV</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </li>
+               
+                <li class="list-group-item">
+                    <a href="">MỚI PHÁT HÀNH</a>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">TOP100</a>
+                        <div class="dropdown-content" style="width: 600px;">
+                              <div class="row">
+                                <div class="col-md-3 cl-md-3">
+                                    <b>VIỆT NAM</b>
+                                    <a href="">Nhạc Trẻ</a>
+                                    <a href="">Nhạc Trữ Tình</a>
+                                    <a href="">Quê Hương</a>
+                                    <a href="">Nhạc Cách Mạng</a>
+                                    <a href="">Rap/ Hip Hop Việt</a>
+                                    <a href="">Rock Việt</a>
+                                    <a href="">Dance Việt</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                   <b>ÂU MỸ</b>
+                                   <a href="">Pop</a>
+                                   <a href="">Rock</a>
+                                   <a href="">Rap/Hip Hop</a>
+                                   <a href="">Country</a>
+                                   <a href="">Electronic/Dance</a>
+                                   <a href="">R&B/Soul</a>
+                                   <a href="">Audiophile</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>CHÂU Á</b>
+                                    <a href="">Hàn Quốc</a>
+                                    <a href="">Nhật Bản</a>
+                                    <a href="">Hoa Ngữ</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>Hòa Tấu</b>
+                                    <a href="">Classical</a>
+                                    <a href="">Piano</a>
+                                    <a href="">Guitar</a>
+                                    <a href="">Violin</a>
+                                    <a href="">Cello</a>
+                                    <a href="">Saxophone</a>
+                                    <a href="">Nhạc Cụ Khác</a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">CHỦ ĐỀ</a>
+                        <div class="dropdown-content" style="width: 600px;">
+                              <div class="row">
+                                <div class="col-md-3 cl-md-3">
+                                    <b>ĐỀ XUẤT</b>
+                                    <a href="">Nhạc Hot</a>
+                                    <a href="">Những Bài Hit</a>
+                                    <a href="">Nhạc Việt Bất Hủ</a>
+                                    <a href="">Nhạc Cách Mạng</a>
+                                    <a href="">Nhạc Bất Hủ Âu...</a>
+                                    <a href="">KPop-HIT</a>
+                                    <a href="">Nhạc Thúy Nga</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                   <b>THỂ LOẠI</b>
+                                   <a href="">EDM</a>
+                                   <a href="">Aucostic</a>
+                                   <a href="">Indie</a>
+                                   <a href="">Nhạc Không Lời</a>
+                                   <a href="">Trữ Tinh/Bolero</a>   
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>TÂM TRẠNG</b>
+                                    <a href="">Những Ngày Mưa</a>
+                                    <a href="">Tình Yêu</a>
+                                    <a href="">Giai Điệu Buồn</a>
+                                    <a href="">Âm Nhạc Thư Giãn</a>
+                                    <a href="">Motivation</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>HOẠT ĐỘNG</b>
+                                    <a href="">Tập Trung</a>
+                                    <a href="">Spa-Yoga</a>
+                                    <a href="">Cà Phê</a>
+                                    <a href="">Weekend</a>
+                                    <a href="">Party</a>
+                                    <a href="">Du Lịch</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">MV</a>
+                        <div class="dropdown-content" style="width: 600px;">
+                            <div class="row">
+                                <div class="col-md-3 cl-md-3">
+                                    <b>VIỆT NAM</b>
+                                    <a href="">Nhạc Trẻ</a>
+                                    <a href="">Nhạc Trữ Tình</a>
+                                    <a href="">Dance Việt</a>
+                                    <a href="">Rock Việt</a>
+                                    <a href="">Rap/ Hip Hop Việt</a>
+                                    <a href="">Nhạc Trịnh</a>
+                                    <a href="">Nhạc Thiếu Nhi</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                   <b>ÂU MỸ</b>
+                                   <a href="">Pop</a>
+                                   <a href="">Rock</a>
+                                   <a href="">Rap/Hip Hop</a>
+                                   <a href="">Country</a>
+                                   <a href="">Electronic/Dance</a>
+                                   <a href="">R&B/Soul</a>
+                                   <a href="">Audiophile</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>CHÂU Á</b>
+                                    <a href="">Hàn Quốc</a>
+                                    <a href="">Nhật Bản</a>
+                                    <a href="">Hoa Ngữ</a>
+                                    <a href="">Thái Lan</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>HÒA TẤU</b>
+                                    <a href="">Classical</a>
+                                    <a href="">Piano</a>
+                                    <a href="">Guitar</a>
+                                    <a href="">Violin</a>
+                                    <a href="">Cello</a>
+                                    <a href="">Saxophone</a>
+                                    <a href="">Nhạc Cụ Dân Tộc</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">ALBUM</a>
+                        <div class="dropdown-content" style="width: 600px;">
+                              <div class="row">
+                                <div class="col-md-3 cl-md-3">
+                                    <b> VIỆT NAM</b>
+                                    <a href="">Nhạc Trẻ</a>
+                                    <a href="">Nhạc Trữ Tình</a>
+                                    <a href="">Dance Việt</a>
+                                    <a href="">Rock Việt</a>
+                                    <a href="">Rap/ Hip Hop Việt</a>
+                                    <a href="">Nhạc Trịnh</a>
+                                    <a href="">Nhạc Thiếu Nhi</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                   <b>ÂU MỸ</b>
+                                   <a href="">Pop</a>
+                                   <a href="">Rock</a>
+                                   <a href="">Rap/Hip Hop</a>
+                                   <a href="">Country</a>
+                                   <a href="">Electronic/Dance</a>
+                                   <a href="">R&B/Soul</a>
+                                   <a href="">Audiophile</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>CHÂU Á</b>
+                                    <a href="">Hàn Quốc</a>
+                                    <a href="">Nhật Bản</a>
+                                    <a href="">Hoa Ngữ</a>
+                                    <a href="">Thái Lan</a>
+                                </div>
+                                <div class="col-md-3 cl-md-3">
+                                    <b>HÒA TẤU</b>
+                                    <a href="">Classical</a>
+                                    <a href="">Piano</a>
+                                    <a href="">Guitar</a>
+                                    <a href="">Violin</a>
+                                    <a href="">Cello</a>
+                                    <a href="">Saxophone</a>
+                                    <a href="">Nhạc Cụ Dân Tộc</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">NGHỆ SĨ</a>
+                        <div class="dropdown-content" style="width: 150px;">
+                                    <a href="">Việt Nam</a>
+                                    <a href="">Âu Mỹ</a>
+                                    <a href="">Hàn Quốc</a>
+                                    <a href="">Nhật Bản</a>
+                                    <a href="">Hoa Ngữ</a>
+                                    <a href="">Hòa Tấu</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="dropdown">
+                        <a href="" class="dropbtn">NHẠC CÁ NHÂN</a>
+                        <div class="dropdown-content nhaccn" style="width: 250px;"> 
+                            <a href="" class="nhaccanhan">  
+                                        <img src="img/iconms.png" alt="" class="">
+                                        <span>Bài hát yêu thích</span>          
+                            </a>
+                            <button type="button" class="btn btn-light">Xem tất cả</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn vip">VIP</button>
+                </li>
+              </ul>
+        </div>
+    </div>
+</body>
+</html>
