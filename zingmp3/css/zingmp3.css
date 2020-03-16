@@ -735,7 +735,9 @@ opacity: 1;
 .mn-hot a:hover {
     color: #6e55b4;
 }
-.dropdown-content.ctg-hot i:hover {background-color:initial;}
+.dropdown-content.ctg-hot i:hover {
+    background-color:initial;
+}
 .bottom-bar {
     text-align: center;
     margin-top: 50px;
