@@ -1,631 +1,1940 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZingMP3</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="zingmp3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/zingmp3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    </style>
 </head>
+
 <body>
-    <div class="top-bar">
-        <div class="row" id="header">
-            <div class="col-md-3">
-                <a class="logo" href=""> <img src="img/logo.png" alt=""></a>
-            </div>
-            <div class="col-md-5">
-                <form>
-                    <div>
-                        <input type="text" class="form-control" id="search" placeholder="Nhập tên bài hát, ca sĩ hoặc mv…">
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-2">
-                        <a href="">
-                            <img src="img/anhdaidien.png" class="rounded-circle" alt="Zing MP3">
-                        </a>
-                    </div> 
-                    <div class="col-md-8" id="drop">
-                        <div class="username">
-                            <a href="" id="username">USERNAME</a>
-                            <div>
-                                <a href="" id="inf4">Tài khoản thường</a> 
-                            </div> 
-                        </div>                      
+    <div class="full-page">
+        <div class="top-bar">
+            <div class="row" id="header">
+                <div class="col-md-2 logo">
+                    <a href=""> <img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="col-md-6">
+                    <form>
                         <div>
-                            <div class="dropdown">
-                                <i class="fas fa-chevron-down" data-toggle="dropdown"></i>
-                                <div  class="dropdown-menu" id="dropdown-menu">                                   
-                                    <a rel="" href="" class="dropdown-item">
-                                        <i class="far fa-user"></i>
-                                        <span>Nhạc Cá Nhân</span>
-                                    </a>                               
-                                    <a rel="" href="" class="dropdown-item">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <span>Đăng Xuất</span>
-                                    </a>                   
-                                    <a rel="" href="" class="dropdown-item">
-                                        <i class="fas fa-moon"></i>
-                                        <span>Nền Tối</span>
-                                        <i class="fas fa-toggle-on"></i>
-                                    </a>                          
-                                    <div class="center">
-                                        <a rel="" href="#" class="btn btn-warning">Mua VIP ngay</a>
-                                    </div>
- 
+                            <input type="text" class="form-control" id="search"
+                                placeholder="Nhập tên bài hát, ca sĩ hoặc mv…">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 userinf">
+                    <div class="row inf4-user">
+                        <div class="col-md-2">
+                            <a href="">
+                                <img src="images/anhdaidien.png" class="rounded-circle avt" alt="Zing MP3">
+                            </a>
+                        </div>
+                        <div class="col-md-8 drp">
+                            <div class="username">
+                                <a href="" id="username">USERNAME</a>
+                                <div>
+                                    <a href="" id="inf4">Tài khoản thường</a>
                                 </div>
                             </div>
-                        </div>       
-                    </div>          
+                            <div class="dropdown-chevron">
+                                <div class="dropdown">
+                                    <i class="fas fa-chevron-down chvn" data-toggle="dropdown"></i>
+                                    <div class="dropdown-menu" id="dropdown-menu">
+                                        <a rel="" href="" class="dropdown-item">
+                                            <i class="far fa-user"></i>
+                                            <span>Nhạc Cá Nhân</span>
+                                        </a>
+                                        <a rel="" href="" class="dropdown-item">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            <span>Đăng Xuất</span>
+                                        </a>
+                                        <a rel="" href="" class="dropdown-item">
+                                            <i class="fas fa-moon"></i>
+                                            <span>Nền Tối</span>
+                                            <i class="fas fa-toggle-on toggle-on"></i>
+                                        </a>
+                                        <div class="center">
+                                            <a rel="" href="#" class="btn btn-warning">Mua VIP ngay</a>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-header">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item menu-top-bar" id="trangchu">
+                        <a href="">TRANG CHỦ</a>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">#ZINGCHART</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 500px;">
+                                <div class="row">
+                                    <div class="col-md-3 cl-md-3">
+                                        <b> REALTIME</b>
+                                        <a href="">Bài hát</a>
+                                        <a href="">MV</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>TUẦN</b>
+                                        <a href="">Bài hát</a>
+                                        <a href="">MV</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>US-UK</b>
+                                        <a href="">Bài hát</a>
+                                        <a href="">MV</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>K-POP</b>
+                                        <a href="">Bài hát</a>
+                                        <a href="">MV</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+    
+                    <li class="list-group-item menu-top-bar">
+                        <a href="">MỚI PHÁT HÀNH</a>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">TOP100</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 600px;">
+                                <div class="row">
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>VIỆT NAM</b>
+                                        <a href="">Nhạc Trẻ</a>
+                                        <a href="">Nhạc Trữ Tình</a>
+                                        <a href="">Quê Hương</a>
+                                        <a href="">Nhạc Cách Mạng</a>
+                                        <a href="">Rap/ Hip Hop Việt</a>
+                                        <a href="">Rock Việt</a>
+                                        <a href="">Dance Việt</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>ÂU MỸ</b>
+                                        <a href="">Pop</a>
+                                        <a href="">Rock</a>
+                                        <a href="">Rap/Hip Hop</a>
+                                        <a href="">Country</a>
+                                        <a href="">Electronic/Dance</a>
+                                        <a href="">R&B/Soul</a>
+                                        <a href="">Audiophile</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>CHÂU Á</b>
+                                        <a href="">Hàn Quốc</a>
+                                        <a href="">Nhật Bản</a>
+                                        <a href="">Hoa Ngữ</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>Hòa Tấu</b>
+                                        <a href="">Classical</a>
+                                        <a href="">Piano</a>
+                                        <a href="">Guitar</a>
+                                        <a href="">Violin</a>
+                                        <a href="">Cello</a>
+                                        <a href="">Saxophone</a>
+                                        <a href="">Nhạc Cụ Khác</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">CHỦ ĐỀ</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 600px;">
+                                <div class="row">
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>ĐỀ XUẤT</b>
+                                        <a href="">Nhạc Hot</a>
+                                        <a href="">Những Bài Hit</a>
+                                        <a href="">Nhạc Việt Bất Hủ</a>
+                                        <a href="">Nhạc Cách Mạng</a>
+                                        <a href="">Nhạc Bất Hủ Âu...</a>
+                                        <a href="">KPop-HIT</a>
+                                        <a href="">Nhạc Thúy Nga</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>THỂ LOẠI</b>
+                                        <a href="">EDM</a>
+                                        <a href="">Aucostic</a>
+                                        <a href="">Indie</a>
+                                        <a href="">Nhạc Không Lời</a>
+                                        <a href="">Trữ Tinh/Bolero</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>TÂM TRẠNG</b>
+                                        <a href="">Những Ngày Mưa</a>
+                                        <a href="">Tình Yêu</a>
+                                        <a href="">Giai Điệu Buồn</a>
+                                        <a href="">Âm Nhạc Thư Giãn</a>
+                                        <a href="">Motivation</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>HOẠT ĐỘNG</b>
+                                        <a href="">Tập Trung</a>
+                                        <a href="">Spa-Yoga</a>
+                                        <a href="">Cà Phê</a>
+                                        <a href="">Weekend</a>
+                                        <a href="">Party</a>
+                                        <a href="">Du Lịch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">MV</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 600px;">
+                                <div class="row">
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>VIỆT NAM</b>
+                                        <a href="">Nhạc Trẻ</a>
+                                        <a href="">Nhạc Trữ Tình</a>
+                                        <a href="">Dance Việt</a>
+                                        <a href="">Rock Việt</a>
+                                        <a href="">Rap/ Hip Hop Việt</a>
+                                        <a href="">Nhạc Trịnh</a>
+                                        <a href="">Nhạc Thiếu Nhi</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>ÂU MỸ</b>
+                                        <a href="">Pop</a>
+                                        <a href="">Rock</a>
+                                        <a href="">Rap/Hip Hop</a>
+                                        <a href="">Country</a>
+                                        <a href="">Electronic/Dance</a>
+                                        <a href="">R&B/Soul</a>
+                                        <a href="">Audiophile</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>CHÂU Á</b>
+                                        <a href="">Hàn Quốc</a>
+                                        <a href="">Nhật Bản</a>
+                                        <a href="">Hoa Ngữ</a>
+                                        <a href="">Thái Lan</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>HÒA TẤU</b>
+                                        <a href="">Classical</a>
+                                        <a href="">Piano</a>
+                                        <a href="">Guitar</a>
+                                        <a href="">Violin</a>
+                                        <a href="">Cello</a>
+                                        <a href="">Saxophone</a>
+                                        <a href="">Nhạc Cụ Dân Tộc</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">ALBUM</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 600px;">
+                                <div class="row">
+                                    <div class="col-md-3 cl-md-3">
+                                        <b> VIỆT NAM</b>
+                                        <a href="">Nhạc Trẻ</a>
+                                        <a href="">Nhạc Trữ Tình</a>
+                                        <a href="">Dance Việt</a>
+                                        <a href="">Rock Việt</a>
+                                        <a href="">Rap/ Hip Hop Việt</a>
+                                        <a href="">Nhạc Trịnh</a>
+                                        <a href="">Nhạc Thiếu Nhi</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>ÂU MỸ</b>
+                                        <a href="">Pop</a>
+                                        <a href="">Rock</a>
+                                        <a href="">Rap/Hip Hop</a>
+                                        <a href="">Country</a>
+                                        <a href="">Electronic/Dance</a>
+                                        <a href="">R&B/Soul</a>
+                                        <a href="">Audiophile</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>CHÂU Á</b>
+                                        <a href="">Hàn Quốc</a>
+                                        <a href="">Nhật Bản</a>
+                                        <a href="">Hoa Ngữ</a>
+                                        <a href="">Thái Lan</a>
+                                    </div>
+                                    <div class="col-md-3 cl-md-3">
+                                        <b>HÒA TẤU</b>
+                                        <a href="">Classical</a>
+                                        <a href="">Piano</a>
+                                        <a href="">Guitar</a>
+                                        <a href="">Violin</a>
+                                        <a href="">Cello</a>
+                                        <a href="">Saxophone</a>
+                                        <a href="">Nhạc Cụ Dân Tộc</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">NGHỆ SĨ</a>
+                            <div class="dropdown-content top-bar-menu" style="width: 150px;">
+                                <a href="">Việt Nam</a>
+                                <a href="">Âu Mỹ</a>
+                                <a href="">Hàn Quốc</a>
+                                <a href="">Nhật Bản</a>
+                                <a href="">Hoa Ngữ</a>
+                                <a href="">Hòa Tấu</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <div class="dropdown">
+                            <a href="" class="dropbtn tb">NHẠC CÁ NHÂN</a>
+                            <div class="dropdown-content top-bar-menu nhaccn" style="width: 250px;">
+                                <a href="" class="nhaccanhan">
+                                    <img src="images/iconms.png" alt="" class="">
+                                    <span>Bài hát yêu thích</span>
+                                </a>
+                                <button type="button" class="btn btn-light">Xem tất cả</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item menu-top-bar">
+                        <button type="button" class="btn vip">VIP</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-bar">
+            <div class="dropdown contentbar">
+                <a href="" class="dropbtn">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner carou-inner">
+                            <div class="carousel-item active">
+                                <img src="images/carousel0.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/carousel1.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/carousel2.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/carousel3.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/carousel4.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/carousel5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-content menucarousel">
+                    <div>
+                        <ul class="list-group list-group-horizontal carousel">
+                            <li class="list-group-item menu-carousel">
+                                <a href=""><img src="images/menucarousel0.png" alt=""></a>
+                            </li>
+                            <li class="list-group-item menu-carousel">
+                                <a href=""><img src="images/menucarousel1.png" alt=""></a>
+                            </li>
+                            <li class="list-group-item menu-carousel">
+                                <a href=""><img src="images/menucarousel2.png" alt=""></a>
+                            </li>
+                            <li class="list-group-item menu-carousel">
+                                <a href=""><img src="images/menucarousel3.png" alt=""></a>
+                            </li>
+                            <li class="list-group-item menu-carousel">
+                                <a href=""><img src="images/menucarousel4.png" alt=""></a>
+                            </li>
+                        </ul>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Playlist Nghe Gần Đây ></a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những Bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Câu Hát Chiều Nay</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory6.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">I Am The Best</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory7.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Cover Songs</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory8.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Covers The Classics</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory5.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Ngày Mới Ngọt Ngào</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory9.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Vui Lên Nào</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Good Day, Work Day</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Nhạc Hàn Không Thể Bỏ Qua</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory8.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Covers The Classics</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory5.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Ngày Mới Ngọt Ngào</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory9.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Vui Lên Nào</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory7.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Cover Songs</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory6.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">I Am The Best</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="zing">
+                <div class="row">
+                    <div class="col-md-7 zingleft">
+                        <a href=""><button class="btn btnzingchart">#zingchart</button></a>
+                        <input placeholder="custom date" type="datetime-local" name="tckt_issue_date" class="dtime">
+                        <button class="btn allms"><i class="fas fa-play"></i> Nghe tất cả</button>
+                    </div>
+                    <div class="col-md-5 zingright">
+                        <ul class="list-group">
+                            <li class="list-group-item lms">
+                                <div class="row">
+                                    <div class="col-md-3 stt">
+                                        <span class="t1">01</span>
+                                        <img src="images/01.png" alt="">
+                                    </div>
+                                    <div class="col-md-7 if">
+                                        <span>Hơn Cả Yêu</span>
+                                        <div class="sg">
+                                            <a href="">
+                                                <span>Đức Phúc</span>
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 vote">
+                                        <span class="t1">58%</span>
+                                    </div>
+                                </div>
+    
+                            </li>
+                            <li class="list-group-item lms">
+                                <div class="row">
+                                    <div class="col-md-3 stt">
+                                        <span class="t2">02</span>
+                                        <img src="images/02.png" alt="">
+                                    </div>
+                                    <div class="col-md-7 if">
+                                        <span>Khóc Cùng Em</span>
+                                        <div class="sg">
+                                            <a href="">
+                                                <span>Mr Siro</span>
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                            <a href="">,Gray,</a>
+                                            <a href="">Wind</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 vote">
+                                        <span class="t2">24%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item lms">
+                                <div class="row">
+                                    <div class="col-md-3 stt">
+                                        <span class="t3">03</span>
+                                        <img src="images/03.png" alt="">
+                                    </div>
+                                    <div class="col-md-7 if">
+                                        <span>Tặng Anh Cho Cô Ấy</span>
+                                        <div class="sg"><a href="">Hương Giang</a></div>
+                                    </div>
+                                    <div class="col-md-2 vote">
+                                        <span class="t3">17%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item lms">
+                                <div class="row">
+                                    <div class="col-md-3 stt">
+                                        <span>04</span>
+                                        <img src="images/04.png" alt="">
+                                    </div>
+                                    <div class="col-md-7 if">
+                                        <span>Yêu Một Người Tổn Thương</span>
+                                        <div class="sg"><a href="">Nhật Phong</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item lms">
+                                <div class="row">
+                                    <div class="col-md-3 stt">
+                                        <span>05</span>
+                                        <img src="images/05.png" alt="">
+                                    </div>
+                                    <div class="col-md-7 if">
+                                        <span>Nằm</span>
+                                        <div class="sg">
+                                            <a href="">Minh Vương M4U,</a>
+                                            <a href="">Hương Ly</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="viewall">
+                            <a href="">Xem tất cả</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="row zingchart-tuan">
+                <div class="col-md-3 zing-tuan">
+                    <button class=" tuan tuan-baihat">
+                        <a href="" class="zoom">
+                            <p class="td">#ZINGCHART TUẦN</p>
+                            <P class="nd">BÀI HÁT VIỆT NAM</P>
+                        </a>
+                    </button>
+                </div>
+                <div class="col-md-3 zing-tuan">
+                    <button class=" tuan tuan-mv">
+                        <a href="">
+                            <p class="td">#ZINGCHART TUẦN</p>
+                            <P class="nd">MV VIỆT NAM</P>
+                        </a>
+                    </button>
+                </div>
+                <div class="col-md-3 zing-tuan">
+                    <button class="tuan tuan-usuk">
+                        <a href="">
+                            <p class="td">#ZINGCHART TUẦN</p>
+                            <P class="nd">US-UK</P>
+                        </a>
+                    </button>
+                </div>
+                <div class="col-md-3 zing-tuan kp">
+                    <button class=" tuan tuan-kpop">
+                        <a href="">
+                            <p class="td">#ZINGCHART TUẦN</p>
+                            <P class="nd">K-POP</P>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="row zingchoices">
+                <div class="zgch">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner zgchoice">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice6.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Hương Tràm</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice0.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Soobin Hoàng</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice1.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Chi Dân</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zgch">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner zgchoice">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice0.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Soobin Hoàng</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice5.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Đàm Vĩnh Hưng</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice6.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Hương Tràm</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zgch zgch-right">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner zgchoice">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice2.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Hòa Minzy</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice4.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Mr Siro</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 zingchoice">
+                                        <img src="images/zingchoice7.png" class="rounded-circle">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <button class="btn zch"><i class="fas fa-star"></i> zing choice</button>
+                                        <p class="namesg"><a href="">Đức Phúc</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Top 100 ></a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những Bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Hip-Hop Vibe</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory6.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">I Am The Best</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory7.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Cover Songs</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory8.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Covers The Classics</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory5.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Ngày Mới Ngọt Ngào</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory9.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Vui Lên Nào</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Nhạc Âu Mỹ</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                </ul>
+            </div>
+            <h3>Mới Phát Hành</h3>
+            <div class="row zingnew">
+                <div class="zgnew">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew3.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Anh Đi Đi</p>
+                                        <p class="tacgia">
+                                            <a href="#1">Pháo,</a>
+                                            <a href="#2">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#1</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew0.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Hai Phút hơn</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#4</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew1.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Khóc Cùng Em</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#7</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zgnew">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew4.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Khóc Cùng Em</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#2</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew3.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Anh Đi Đi</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#5</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew2.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Hai Phút hơn</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#8</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zgnew zgnew-right">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew1.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Hai Phút hơn</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#3</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="images/zingnew0.png">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="tenbh">Khóc Cùng Em</p>
+                                        <p class="tacgia">
+                                            <a href="">Pháo,</a>
+                                            <a href="">Wack</a>
+                                        </p>
+                                        <p class="znewdate">
+                                            <span class="tt">#6</span>
+                                            <span class="date">21.11.2019</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item znewall">
+                                <a href="">Xem Tất Cả</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row list-music">
+               
+                    <ul class="list-group lst-msc">
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                </div>
+                                <div class="overlay actions">
+                                    <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <div class="dropdown">
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                        <div class="dropdown-menu drop-list">
+                                            <div class="row dropdown-item drp-lst">
+                                                <div class="col-md-2 drplist">
+                                                    <img src="images/demo.jpg" class="image">
+                                                </div>
+                                                <div class="col-md-10 drlist">
+                                                    <p class="">Sao Anh Chưa Về Nhà</p>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item drp-lst" href="#">Link 2</a>
+                                            <a class="dropdown-item drp-lst" href="#">Link 3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                
+               
+                    <ul class="list-group lst-msc">
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+               
+               
+                    <ul class="list-group lst-msc">
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item lst-ms">
+                            <div class="container cnt">
+                                <div class="row lst">
+                                    <div class="list-img">
+                                        <div class="container cntr">
+                                            <img src="images/demo.jpg" class="image">
+                                            <div class="overlay ctn">
+                                                <a href="#" class="icon plays" title="User Profile">
+                                                    <i class="fas fa-play playcircle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lst-content">
+                                        <p class="name-item">Sao Anh Chưa Về Nhà</p>
+                                        <a href="">Erick,</a>
+                                        <a href="">Ame</a>
+                                    </div>
+                                    <div class="overlay actions">
+                                        <button data-toggle="tooltip" class="btn" class="btn like" title="Thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="dropdown" class="dfr" title="Khác">...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">Nhạc Mới Dành Cho Bạn</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="topic">
+                <h3>Chủ Đề & Thể Loại ></h3>
+                <div class="row list-topic">
+                    <a class="lstpc">
+                        <div class="container ltp">
+                            <img src="images/topic1.jpg" alt="">
+                            <p class="centered">Nhạc Việt</p>
+                        </div>
+                    </a>
+                    <a class="lstpc">
+                        <div class="container ltp">
+                            <img src="images/topic1.jpg" alt="">
+                            <p class="centered">Nhạc Việt</p>
+                        </div>
+                    </a>
+                    <a class="lstpc">
+                        <div class="container ltp">
+                            <img src="images/topic1.jpg" alt="">
+                            <p class="centered">Nhạc Việt</p>
+                        </div>
+                    </a>
+                    <a class="lstpc">
+                        <div class="container ltp">
+                            <img src="images/topic1.jpg" alt="">
+                            <p class="centered">Nhạc Việt</p>
+                        </div>
+                    </a>
+                    <a class="lstpc">
+                        <div class="container ltp">
+                            <img src="images/topic1.jpg" alt="">
+                            <p class="centered">Nhạc Việt</p>
+                        </div>
+                    </a>
+                </div>
+               
+            </div>
+            <div class="category">
+                <div class="chevron">
+                    <a href="">ALBUM HOT ></a>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <ul class="list-group list-group-horizontal categorylist">
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory3.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory2.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Brain Food</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory4.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Những bài Hát Dành Cho Tuổi Trẻ</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory1.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Chào Ngày Mới</a>
+                    </li>
+                    <li class="list-group-item menu-category">
+                        <a href="">
+                            <div class="dropdown mn-ctg">
+                                <a class="dropbtn"> <img src="images/menucategory0.png" alt=""></a>
+                                <div class="dropdown-content ctg">
+                                    <i class="far fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="content-img-category">Gió Vẫn Hát</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row mvhot">
+                <div class="col-md-8 mvhot-left">
+                        <div class="container">
+                            <img src="images/topic1.jpg" class="image">
+                            <div class="overlay ctn">
+                                <a href="#" class="icon plays" title="User Profile">
+                                    <i class="fas fa-play playcircle"></i>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 mvhot-right">
+                    <div class="row">
+                        <div class="col-md-6 ct-hot">
+                            <a href="">
+                                <div class="dropdown mn-hot">
+                                    <a class="dropbtn"> <img src="images/hot1.jpg" alt="" style="width:100%"></a>
+                                    <a href="">Sài Gòn Của Anh</a>
+                                    <a href="">HuyR,</a>
+                                    <a href="">K-ICM</a>
+                                    <div class="dropdown-content ctg-hot">
+                                        <i class="far fa-play-circle"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 ct-hot">
+                            <a href="">
+                                <div class="dropdown mn-hot">
+                                    <a class="dropbtn"> <img src="images/hot1.jpg" alt="" style="width:100%"></a>
+                                    <a href="">Sài Gòn Của Anh</a>
+                                    <a href="">HuyR,</a>
+                                    <a href="">K-ICM</a>
+                                    <div class="dropdown-content ctg-hot">
+                                        <i class="far fa-play-circle"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ct-hot">
+                            <a href="">
+                                <div class="dropdown mn-hot">
+                                    <a class="dropbtn"> <img src="images/hot1.jpg" alt="" style="width:100%"></a>
+                                    <a href="">Sài Gòn Của Anh</a>
+                                    <a href="">HuyR,</a>
+                                    <a href="">K-ICM</a>
+                                    <div class="dropdown-content ctg-hot">
+                                        <i class="far fa-play-circle"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 ct-hot">
+                            <a href="">
+                                <div class="dropdown mn-hot">
+                                    <a class="dropbtn"> <img src="images/hot1.jpg" alt="" style="width:100%"></a>
+                                    <a href="">Sài Gòn Của Anh</a>
+                                    <a href="">HuyR,</a>
+                                    <a href="">K-ICM</a>
+                                    <div class="dropdown-content ctg-hot">
+                                        <i class="far fa-play-circle"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item menu-top-bar" id="trangchu">
-                    <a href="">TRANG CHỦ</a>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">#ZINGCHART</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 500px;">
-                              <div class="row">
-                                <div class="col-md-3 cl-md-3">
-                                    <span><b> REALTIME</b></span>
-                                    <a href="">Bài hát</a>
-                                    <a href="">MV</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                   <span><b>TUẦN</b></span>
-                                   <a href="">Bài hát</a>
-                                   <a href="">MV</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <span><b>US-UK</b></span>
-                                    <a href="">Bài hát</a>
-                                    <a href="">MV</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <span><b>K-POP</b></span>
-                                    <a href="">Bài hát</a>
-                                    <a href="">MV</a>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </li>
-               
-                <li class="list-group-item menu-top-bar">
-                    <a href="">MỚI PHÁT HÀNH</a>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">TOP100</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 600px;">
-                              <div class="row">
-                                <div class="col-md-3 cl-md-3">
-                                    <b>VIỆT NAM</b>
-                                    <a href="">Nhạc Trẻ</a>
-                                    <a href="">Nhạc Trữ Tình</a>
-                                    <a href="">Quê Hương</a>
-                                    <a href="">Nhạc Cách Mạng</a>
-                                    <a href="">Rap/ Hip Hop Việt</a>
-                                    <a href="">Rock Việt</a>
-                                    <a href="">Dance Việt</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                   <b>ÂU MỸ</b>
-                                   <a href="">Pop</a>
-                                   <a href="">Rock</a>
-                                   <a href="">Rap/Hip Hop</a>
-                                   <a href="">Country</a>
-                                   <a href="">Electronic/Dance</a>
-                                   <a href="">R&B/Soul</a>
-                                   <a href="">Audiophile</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>CHÂU Á</b>
-                                    <a href="">Hàn Quốc</a>
-                                    <a href="">Nhật Bản</a>
-                                    <a href="">Hoa Ngữ</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>Hòa Tấu</b>
-                                    <a href="">Classical</a>
-                                    <a href="">Piano</a>
-                                    <a href="">Guitar</a>
-                                    <a href="">Violin</a>
-                                    <a href="">Cello</a>
-                                    <a href="">Saxophone</a>
-                                    <a href="">Nhạc Cụ Khác</a>
-                                </div>
-                              </div>
-                        </div>
-                      </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">CHỦ ĐỀ</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 600px;">
-                              <div class="row">
-                                <div class="col-md-3 cl-md-3">
-                                    <b>ĐỀ XUẤT</b>
-                                    <a href="">Nhạc Hot</a>
-                                    <a href="">Những Bài Hit</a>
-                                    <a href="">Nhạc Việt Bất Hủ</a>
-                                    <a href="">Nhạc Cách Mạng</a>
-                                    <a href="">Nhạc Bất Hủ Âu...</a>
-                                    <a href="">KPop-HIT</a>
-                                    <a href="">Nhạc Thúy Nga</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                   <b>THỂ LOẠI</b>
-                                   <a href="">EDM</a>
-                                   <a href="">Aucostic</a>
-                                   <a href="">Indie</a>
-                                   <a href="">Nhạc Không Lời</a>
-                                   <a href="">Trữ Tinh/Bolero</a>   
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>TÂM TRẠNG</b>
-                                    <a href="">Những Ngày Mưa</a>
-                                    <a href="">Tình Yêu</a>
-                                    <a href="">Giai Điệu Buồn</a>
-                                    <a href="">Âm Nhạc Thư Giãn</a>
-                                    <a href="">Motivation</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>HOẠT ĐỘNG</b>
-                                    <a href="">Tập Trung</a>
-                                    <a href="">Spa-Yoga</a>
-                                    <a href="">Cà Phê</a>
-                                    <a href="">Weekend</a>
-                                    <a href="">Party</a>
-                                    <a href="">Du Lịch</a>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">MV</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 600px;">
-                            <div class="row">
-                                <div class="col-md-3 cl-md-3">
-                                    <b>VIỆT NAM</b>
-                                    <a href="">Nhạc Trẻ</a>
-                                    <a href="">Nhạc Trữ Tình</a>
-                                    <a href="">Dance Việt</a>
-                                    <a href="">Rock Việt</a>
-                                    <a href="">Rap/ Hip Hop Việt</a>
-                                    <a href="">Nhạc Trịnh</a>
-                                    <a href="">Nhạc Thiếu Nhi</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                   <b>ÂU MỸ</b>
-                                   <a href="">Pop</a>
-                                   <a href="">Rock</a>
-                                   <a href="">Rap/Hip Hop</a>
-                                   <a href="">Country</a>
-                                   <a href="">Electronic/Dance</a>
-                                   <a href="">R&B/Soul</a>
-                                   <a href="">Audiophile</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>CHÂU Á</b>
-                                    <a href="">Hàn Quốc</a>
-                                    <a href="">Nhật Bản</a>
-                                    <a href="">Hoa Ngữ</a>
-                                    <a href="">Thái Lan</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>HÒA TẤU</b>
-                                    <a href="">Classical</a>
-                                    <a href="">Piano</a>
-                                    <a href="">Guitar</a>
-                                    <a href="">Violin</a>
-                                    <a href="">Cello</a>
-                                    <a href="">Saxophone</a>
-                                    <a href="">Nhạc Cụ Dân Tộc</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">ALBUM</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 600px;">
-                              <div class="row">
-                                <div class="col-md-3 cl-md-3">
-                                    <b> VIỆT NAM</b>
-                                    <a href="">Nhạc Trẻ</a>
-                                    <a href="">Nhạc Trữ Tình</a>
-                                    <a href="">Dance Việt</a>
-                                    <a href="">Rock Việt</a>
-                                    <a href="">Rap/ Hip Hop Việt</a>
-                                    <a href="">Nhạc Trịnh</a>
-                                    <a href="">Nhạc Thiếu Nhi</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                   <b>ÂU MỸ</b>
-                                   <a href="">Pop</a>
-                                   <a href="">Rock</a>
-                                   <a href="">Rap/Hip Hop</a>
-                                   <a href="">Country</a>
-                                   <a href="">Electronic/Dance</a>
-                                   <a href="">R&B/Soul</a>
-                                   <a href="">Audiophile</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>CHÂU Á</b>
-                                    <a href="">Hàn Quốc</a>
-                                    <a href="">Nhật Bản</a>
-                                    <a href="">Hoa Ngữ</a>
-                                    <a href="">Thái Lan</a>
-                                </div>
-                                <div class="col-md-3 cl-md-3">
-                                    <b>HÒA TẤU</b>
-                                    <a href="">Classical</a>
-                                    <a href="">Piano</a>
-                                    <a href="">Guitar</a>
-                                    <a href="">Violin</a>
-                                    <a href="">Cello</a>
-                                    <a href="">Saxophone</a>
-                                    <a href="">Nhạc Cụ Dân Tộc</a>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">NGHỆ SĨ</a>
-                        <div class="dropdown-content top-bar-menu" style="width: 150px;">
-                                    <a href="">Việt Nam</a>
-                                    <a href="">Âu Mỹ</a>
-                                    <a href="">Hàn Quốc</a>
-                                    <a href="">Nhật Bản</a>
-                                    <a href="">Hoa Ngữ</a>
-                                    <a href="">Hòa Tấu</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <div class="dropdown">
-                        <a href="" class="dropbtn tb">NHẠC CÁ NHÂN</a>
-                        <div class="dropdown-content top-bar-menu nhaccn" style="width: 250px;"> 
-                            <a href="" class="nhaccanhan">  
-                                        <img src="img/iconms.png" alt="" class="">
-                                        <span>Bài hát yêu thích</span>          
-                            </a>
-                            <button type="button" class="btn btn-light">Xem tất cả</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item menu-top-bar">
-                    <button type="button" class="btn vip">VIP</button>
-                </li>
-              </ul>
-        </div>
-    </div>
-
-    <div class="content-bar">
-        <div class="dropdown contentbar">
-            <a href="" class="dropbtn">
-                <div class="carousel slide" data-ride="carousel">         
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/carousel0.png" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/carousel1.png" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/carousel2.png" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/carousel3.png" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/carousel4.png" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/carousel5.png" alt="">
-                      </div>
-                    </div>
-                </div>       
-            </a>
-            <div class="dropdown-content menucarousel">
-                 <div>
-                        <ul class="list-group list-group-horizontal carousel">
-                            <li class="list-group-item menu-carousel">
-                                <a href=""><img src="img/menucarousel0.png" alt=""></a>
-                            </li>
-                            <li class="list-group-item menu-carousel">
-                                <a href=""><img src="img/menucarousel1.png" alt=""></a>
-                            </li>
-                            <li class="list-group-item menu-carousel">
-                                <a href=""><img src="img/menucarousel2.png" alt=""></a>
-                            </li>
-                            <li class="list-group-item menu-carousel">
-                                <a href=""><img src="img/menucarousel3.png" alt=""></a>
-                            </li>
-                            <li class="list-group-item menu-carousel">
-                                <a href=""><img src="img/menucarousel4.png" alt=""></a>
-                            </li>
-                        </ul>
-                       
-                    </div>
-            </div>
-        </div>
-        <div class="category"> 
-            <div class="chevron">
-                <a href="">Playlist Nghe Gần Đây ></a>
-                <i class="fas fa-chevron-right"></i>
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <ul class="list-group list-group-horizontal categorylist">
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory0.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Gió Vẫn Hát</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory1.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Chào Ngày Mới</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory2.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Brain Food</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory3.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory4.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Những Bài Hát Dành Cho Tuổi Trẻ</a>
-                </li>
-            </ul>
-        </div>
-        <div class="category"> 
-            <div class="chevron">
-                <a href="">Câu Hát Chiều Nay</a>
-                <i class="fas fa-chevron-right"></i>
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <ul class="list-group list-group-horizontal categorylist">
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory6.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">I Am The Best</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory7.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Cover Songs</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory8.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Covers The Classics</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory5.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Ngày Mới Ngọt Ngào</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory9.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Vui Lên Nào</a>
-                </li>
-            </ul>
-        </div>
-        <div class="category"> 
-            <div class="chevron">
-                <a href="">Good Day, Work Day</a>
-                <i class="fas fa-chevron-right"></i>
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <ul class="list-group list-group-horizontal categorylist">
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory3.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Mở Đầu Hoàn Hảo</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory2.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Brain Food</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory4.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Những bài Hát Dành Cho Tuổi Trẻ</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory1.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Chào Ngày Mới</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory0.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Gió Vẫn Hát</a>
-                </li>
-            </ul>
-        </div>
-        <div class="category"> 
-            <div class="chevron">
-                <a href="">Nhạc Hàn Không Thể Bỏ Qua</a>
-                <i class="fas fa-chevron-right"></i>
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <ul class="list-group list-group-horizontal categorylist">
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory8.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Covers The Classics</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory5.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Ngày Mới Ngọt Ngào</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory9.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Vui Lên Nào</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory7.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">Cover Songs</a>
-                </li>
-                <li class="list-group-item menu-category">
-                    <a href="">
-                        <div class="dropdown abc">
-                            <a class="dropbtn abcd"> <img src="img/menucategory6.png" alt=""></a>
-                            <div class="dropdown-content xyz">
-                            <i class="far fa-play-circle abcd"></i>   
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="content-img-category">I Am The Best</a>
-                </li>
-            </ul>
-        </div>
-        <div>
+        <div class="bottom-bar">
+            <img src="images/logo-bottom.PNG" alt="">
+            <span>Một sản phẩm của Zalo</span>
+            <p class="source">
+                <a href="">Giới thiệu •</a>
+                <a href="">Liên hệ •</a>
+                <a href="">Quảng cáo •</a>
+                <a href="">Góp ý •</a>
+                <a href="">Thỏa thuận sử dụng </a>
+            </p>
             
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
